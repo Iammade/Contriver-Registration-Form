@@ -1,0 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 420px;
+    padding: 25px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+label {
+    display: block;
+    color: #34495e;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+input[type="text"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+input[type="text"]:focus, input[type="tel"]:focus, textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+textarea {
+    height: 90px;
+    resize: none;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+button:hover {
+    background: linear-gradient(45deg, #2980b9, #8e44ad);
+    transform: translateY(-2px);
+}
+button:active {
+    transform: translateY(0);
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #7f8c8d;
+    font-size: 12px;
+}
+/* Add a subtle shadow effect on focus */
+input[type="text"]:focus, input[type="tel"]:focus, textarea:focus {
+    border: 1px solid #2980b9;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Styles for the thank you message */
+#thank-you-message {
+    display: none;
+    text-align: center;
+}
+#thank-you-message h2 {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#thank-you-message p {
+    color: #34495e;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+#thank-you-message a {
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+#thank-you-message a:hover {
+    background-color: #2980b9;
+}

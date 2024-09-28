@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contriver - User Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="form-container">
+        <h1>Contriver Registration Form</h1>
+        <form id="registrationForm" name="submit-to-google-sheet">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="college">College Name</label>
+            <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required>
+
+            <label for="interest">Area of Interest</label>
+            <textarea id="interest" name="interest" placeholder="Enter your areas of interest" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="footer">
+            <p>&copy; 2024 Contriver</p>
+        </div>
+    </div>
+
+    <div id="thank-you-message">
+        <h2>Thank You for Your Registration!</h2>
+        <p>We will meet you soon.</p>
+        <a href="https://contriver.co.in/">Return to Main Page</a>
+    </div>
+
+<script src="app.js"></script>   
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxXztiTIVTQS10hHGdSuRESF_JxbH2g32m_i15tQiIt3CL-b134GM1a0t-e2ANMwGXqXQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
